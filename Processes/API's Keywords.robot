@@ -12,6 +12,31 @@ Resource    ../Processes/Pending Fabricator Review & Acceptance.robot
 *** Keywords ***
 
 
+Maybe Invalid Dates
+    sleep    2s
+    ${CountProducts1}=    get element count    xpath://*[contains(text(),"invalid data")]
+    capture page screenshot
+
+    IF    ${CountProducts1}>0
+            click element    xpath://*[@class="slds-button slds-button--neutral pageErrorIconButton uiButton"]
+             ${Measurement Date Preference}   Get Current Date    result_format=%d/%m/%Y
+             click link    xpath://span[text()="Measurement Date Preference"]/parent::label/following-sibling::div/a[@class="datePicker-openIcon display"]
+             Wait Until Page Contains Element    xpath://*[text()="Installation Date Preference"]/parent::label/following-sibling::div/input    60s
+             input text    xpath://*[text()="Measurement Date Preference"]/parent::label/following-sibling::div/input    ${Measurement Date Preference}
+
+
+             ${Installation Date Preference}   Get Current Date    result_format=%d/%m/%Y
+
+             #click element    xpath://span[text()="Installation Time Preference"]/parent::span/following-sibling::div/div[@class="uiPopupTrigger"]/div/div/a
+             Wait Until Page Contains Element    xpath://*[text()="Installation Date Preference"]/parent::label/following-sibling::div/input    60s
+             input text    xpath://*[text()="Installation Date Preference"]/parent::label/following-sibling::div/input    ${Installation Date Preference}
+             sleep    2s
+             click button    Save
+             #click button    Mark Status as Complete
+
+    END
+
+
 API - Validate Acceptance Fabricator API
     [Arguments]   ${access_token}    ${token_type}    ${JobId}
     ${header}    set variable    ${token_type} ${access_token}
@@ -133,6 +158,8 @@ API - Change Measurement && Installation Time
     click element    xpath://*[text()="12:00 - 16:00" and @aria-checked="false"]
 
     click button    Save
+
+    Maybe Invalid Dates
     click button    Mark as Current Status
 
 
@@ -194,9 +221,8 @@ API - Choose Measurement && Installation Time
 
     click button    Save
     click button    Mark Status as Complete
-
-
-
+    sleep    4s
+    Maybe Invalid Dates
 
 
 

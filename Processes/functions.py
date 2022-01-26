@@ -13,7 +13,10 @@ def subDate(DateDate):
     return DateDate[0:10]
 
 def ProductPrice(PPrice):
-    return PPrice[4:PPrice.index("(")]
+    if PPrice.find("(")!=-1:
+       return PPrice[4:PPrice.index("(")]
+    else:
+        return PPrice[4:]
 
 
 def ProductPrice1(PPrice):

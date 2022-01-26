@@ -15,7 +15,7 @@ ${Product in second_row} =    xpath:(//*[@class="slds-card__body"]/slot/c-quick-
 ${Product in third_row} =    xpath:(//*[@class="slds-card__body"]/slot/c-quick-quote-item-list-row[3]/div/div[2]/c-search-autocomplete-selector/div/div/div/div/div/input[@placeholder="Search by name or code"])[1]
 ${Product in fourth_row} =    xpath:(//*[@class="slds-card__body"]/slot/c-quick-quote-item-list-row[4]/div/div[2]/c-search-autocomplete-selector/div/div/div/div/div/input[@placeholder="Search by name or code"])[1]
 
-${Product in fifth_row} =    xpath:(//*[@title="Other"]/c-quick-quote-item-list/lightning-card/article/*[@class="slds-card__body"]/slot/c-quick-quote-item-list-row[1]/div/div[2]/c-search-autocomplete-selector/div/div/div/div/input[@placeholder="Search by name or code"])[1]
+${Product in fifth_row} =    xpath:(//*[@title="Other"]/c-quick-quote-item-list/lightning-card/article/*[@class="slds-card__body"]/slot/c-quick-quote-item-list-row[1]/div/div[2]/c-search-autocomplete-selector/div/div/div/div/div/input[@placeholder="Search by name or code"])[1]
 ${first_dropDown_option of first Product} =     Adamina - 2cm
 ${first_dropDown_option of second Product} =     20mm Arris Edge
 ${first_dropDown_option of third Product} =     Additional Rough Cutout
@@ -55,6 +55,7 @@ Clicking "Create Quick Quote" On Navbar
 
 Verify Being On "Retailer" Page
     Wait Until Page Contains Element    xpath://*[contains(text(),"Create Quick Quote")]    100s
+    sleep    2s
 
 Filling "Customer Details" Form
     Verify Being On "Customer Details" Page
@@ -209,14 +210,14 @@ Add One Product To Quote
 
      END
 
-    click element    ${Product in first_row}
-    click element    xpath:(//*[@class="slds-card__body"]/slot/c-quick-quote-item-list-row[1]/div/div[2]/c-search-autocomplete-selector/div/div/div/div[2]/ul/c-search-autocomplete-selector-item[1]/li/div/span/span)[1]
+    click element    xpath:(//*[@class="slds-card__body"]/slot/c-quick-quote-item-list-row[1]/div/div[2]/c-search-autocomplete-selector/div/div/div/div/div/input[@placeholder="Search by name or code"])[1]
+    click element    xpath:(//*[@class="slds-card__body"]/slot/c-quick-quote-item-list-row[1]/div/div[2]/c-search-autocomplete-selector/div/div/div/div/div[2]/ul/c-search-autocomplete-selector-item[1]/li/div/span/span)[1]
     input text    ${Quantity in first_row}    3
 
 
     click element    ${Product in fifth_row}
     #click element    ${first_dropDown_option of fourth Product}
-    click element    xpath:(//*[@title="Other"]/c-quick-quote-item-list/lightning-card/article/*[@class="slds-card__body"]/slot/c-quick-quote-item-list-row[1]/div/div[2]/c-search-autocomplete-selector/div/div/div/div[2]/ul/c-search-autocomplete-selector-item[1]/li/div/span/span)[1]
+    click element    xpath:(//*[@title="Other"]/c-quick-quote-item-list/lightning-card/article/*[@class="slds-card__body"]/slot/c-quick-quote-item-list-row[1]/div/div[2]/c-search-autocomplete-selector/div/div/div/div/div[2]/ul/c-search-autocomplete-selector-item[1]/li/div/span/span)[1]
 
     input text    ${Quantity in fifth_row}    2
 

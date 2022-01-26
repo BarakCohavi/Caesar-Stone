@@ -51,6 +51,7 @@ Library    ../Processes/functions.py
 
     #scroll element into view    //*[text()="Needs To Be Charged For Slabs"]/parent::span/following-sibling::div/div/div/div/a
     click element    //*[text()="Needs To Be Charged For Slabs"]/parent::span/following-sibling::div/div/div/div/a
+    sleep    0.5s
     click element    (//*[text()="No"])[2]
 
     scroll element into view    xpath://*[text()="Bill To Usage ID"]

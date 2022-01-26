@@ -3,6 +3,7 @@ Library    SeleniumLibrary
 Library    DateTime
 Resource    Common.robot
 Resource    ../Processes/Invoice and completion.robot
+Resource    ../Processes/API's Keywords.robot
 Library    functions.py
 
 *** Variables ***
@@ -90,8 +91,8 @@ Choose Measurement && Installation Time
     click element    xpath://*[text()="07:00 - 12:00" and @aria-checked="false"]
 
     click button    Save
+    Maybe Invalid Dates
     click button    Mark Status as Complete
-
 Choose Fabricator
 
     wait until page contains element    xpath://*[text()="Choose A Fabricator"]/parent::label/following-sibling::div/div/div/div/input    60s

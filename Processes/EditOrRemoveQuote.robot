@@ -111,7 +111,7 @@ Verifying "New Quote" Was Changed
 
 Check Products
     ${CountProducts}=    get element count    xpath://*[contains(text(),"Kitchen 1")]
-    should be true    ${CountProducts}>=6
+    should be true    ${CountProducts}>=5
 
 Check There Are 2 Rooms
     page should contain     ${Room1}
