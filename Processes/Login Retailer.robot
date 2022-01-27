@@ -19,6 +19,7 @@ Login To CSpartial
     input text    username   ${login_username}
     capture page screenshot
     input password    password   ${login_password}
+    capture page screenshot
     click element    rememberUn
     capture page screenshot
     click button    Login
