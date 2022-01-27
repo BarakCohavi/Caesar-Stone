@@ -16,9 +16,9 @@ Login To CSpartial
 
     Go To   ${cspartial login_page}
     wait until page contains    Forgot Your Password?
-    input text    username   ${login_username}
+    input text    username   caesarstone.testing@gmail.com.api
     capture page screenshot
-    input password    password   ${login_password}
+    input password    password   2w3e4r5t6y
     capture page screenshot
     click element    rememberUn
     capture page screenshot
