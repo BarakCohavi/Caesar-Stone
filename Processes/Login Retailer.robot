@@ -17,8 +17,10 @@ Login To CSpartial
     Go To   ${cspartial login_page}
     wait until page contains    Forgot Your Password?
     input text    username   ${login_username}
+    capture page screenshot
     input password    password   ${login_password}
     click element    rememberUn
+    capture page screenshot
     click button    Login
     Wait Until Page Contains Element    xpath://*[text()="Sales Caesarstone"]    100s
 

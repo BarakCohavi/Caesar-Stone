@@ -51,6 +51,7 @@ Process
 
 Clicking "Create Quick Quote" On Navbar
     Verify Being On "Retailer" Page
+    sleep    2s
     click link    xpath://*[@id="6"]
 
 Verify Being On "Retailer" Page

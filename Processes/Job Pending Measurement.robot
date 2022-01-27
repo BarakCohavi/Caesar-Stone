@@ -14,9 +14,12 @@ Process
     
 Upload photo
     [Arguments]    ${path_Photo}
-    sleep    2s
     wait until page does not contain element    xpath://*[text()="Save"]    60s
     wait until page contains element    xpath://*[@class="uiMenu"]/div/div/div/a/lightning-icon    60s
+    reload page
+    wait until page does not contain element    xpath://*[text()="Save"]    60s
+    wait until page contains element    xpath://*[@class="uiMenu"]/div/div/div/a/lightning-icon    60s
+    sleep    3s
     click element    xpath://*[@class="uiMenu"]/div/div/div/a/lightning-icon
 
     #Wait Until Page Contains Element    xpath://*[@title="Upload Photos"]    60s

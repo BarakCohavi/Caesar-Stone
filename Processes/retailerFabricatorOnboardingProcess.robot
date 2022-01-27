@@ -209,7 +209,7 @@ Select Edit Access to CS Connect & Primary Owner
         END
     END
     #wait until page contains element    xpath:(//*[text()="Contact Owner"])    40s
-    sleep    3s
+    sleep    4s
     scroll element into view    xpath:(//*[text()="User Creation Failure Reason"])
 
     click element    xpath://*[@title="Edit Access to CS Connect"]
