@@ -41,6 +41,8 @@ Quote to new job
     Accept The Job (Click Yes)
     capture page screenshot
     sleep    3s
+    wait until page does not contain element    xpath://*[text()="Save"]    30s
+    wait until page contains element    xpath://*[text()="Mark Status as Complete"]    30s
     Common.LogOut As Fabricator
     ${JOBStatus}    API - Validate Acceptance Fabricator API     ${access_token}    ${token_type}    ${JobId}
     #should be equal as strings    ${JOBStatus}    New Job

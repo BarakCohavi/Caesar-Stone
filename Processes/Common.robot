@@ -29,7 +29,9 @@ Retailer Log Out
 Retailer Log Out-API
     Wait Until Page Contains Element    xpath://*[text()="Do You Accept The Job?"]    60s
     scroll element into view    xpath://*[@title="Expand search"]
-    click element    xpath://*[@class="slds-button slds-no-space slds-m-bottom_xx-small"]
+    wait until page does not contain element    xpath://*[text()="Save"]    30s
+    wait until page contains element    xpath://*[text()="Mark Status as Complete"]    30s
+    click element    xpath://*[@class="comm-user-profile-menu__trigger-p slds-text-align_right slds-truncate slds-m-vertical_xx-small"]
     click element    xpath://*[@title="Log Out"]
 
 
@@ -91,27 +93,53 @@ select checkbox COCUploaded
 
 Click Search CaesarStone Page
     [Arguments]    ${CURJOB}
-    sleep    7s
+    #sleep    7s
+    reload page
     #Wait Until Page Contains Element    xpath://*[contains(text(),"Create Quick Quote")]    60s
     Wait Until Page Contains Element    xpath://*[@class="slds-button slds-no-space slds-m-bottom_xx-small"]    60s
     wait until element is enabled    xpath://*[@class="slds-button slds-no-space slds-m-bottom_xx-small"]    60s
     wait until element is visible    xpath://*[@class="slds-button slds-no-space slds-m-bottom_xx-small"]    60s
     sleep    3s
-    wait until element is enabled    xpath:(//*[@data-key="search"])[1]    60s
-
-    click element    xpath:(//*[@data-key="search"])[1]
+    wait until element is enabled    xpath:(//*[@data-key="search"]/parent::lightning-primitive-icon)[1]    60s
+    mouse down    xpath:(//*[@data-key="search"]/parent::lightning-primitive-icon)[1]
+    mouse up    xpath:(//*[@data-key="search"]/parent::lightning-primitive-icon)[1]
+    #click element    xpath:(//*[@data-key="search"]/parent::lightning-primitive-icon)[1]
     sleep    1s
     input text   //*[@aria-label="Search..."]    ${CURJOB}
     #click element    xpath:(//*[@data-key="search"])[1]
     click element    xpath://*[@title="Search"]
 
-    Wait Until Page Contains Element    xpath://*[@title="${CURJOB}"]    60s
-    Wait Until element is enabled    xpath://*[@title="${CURJOB}"]    60s
+    #Wait Until Page Contains Element    xpath://*[@title="${CURJOB}"]    60s
+    #Wait Until element is enabled    xpath://*[@title="${CURJOB}"]    60s
     sleep    2s
-    Wait Until Page Contains Element    xpath://*[@title="${CURJOB}"]    60s
-    Wait Until element is enabled    xpath://*[@title="${CURJOB}"]    60s
-    click element    xpath://*[@title="${CURJOB}"]
+    Wait Until Page Contains Element    xpath://*[contains(text(),"${CURJOB}")]    60s
+    Wait Until element is enabled    xpath://*[contains(text(),"${CURJOB}")]    60s
 
+
+    #wait until page does not contain element   xpath://*[text()="Status"]    60s
+    sleep    2s
+     ${CountProducts}=    get element count    xpath://*[contains(text(),"We searched for")]
+    capture page screenshot
+    IF    ${CountProducts}==1
+       capture page screenshot
+       click search caesarstone page    ${CURJOB}
+    END
+    ${CountProducts}=    get element count    xpath://a[text()="${CURJOB}"]
+    capture page screenshot
+    IF    ${CountProducts}==0
+       capture page screenshot
+       click search caesarstone page    ${CURJOB}
+    END
+
+    Wait Until Page Contains Element    xpath://*[@title="${CURJOB}"]    60s
+    wait until element is visible    xpath://*[@title="${CURJOB}"]    60s
+    ${CountProducts}=    get element count    xpath://a[text()="${CURJOB}"]
+    capture page screenshot
+    IF    ${CountProducts}==1
+           Wait Until Page Contains Element    xpath://*[@title="${CURJOB}"]    60s
+             wait until element is visible    xpath://*[@title="${CURJOB}"]    60s
+           click element    xpath://*[@title="${CURJOB}"]
+    END
 
 Click Search CaesarStone Page1
     [Arguments]    ${CURJOB}
