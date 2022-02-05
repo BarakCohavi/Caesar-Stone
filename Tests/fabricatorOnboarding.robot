@@ -6,7 +6,7 @@ Resource    ../Processes/Create Qoute.robot
 Library    ../Processes/functions.py
 
 Suite Setup    Login Retailer.Initiate Web Tests    ${BROWSER}    ${BROWSER_OPTIONS}
-#Suite Teardown    Common.Terminate Web Tests
+Suite Teardown    Common.Terminate Web Tests
 
 *** Variables ***
 ${BROWSER} =    chrome
