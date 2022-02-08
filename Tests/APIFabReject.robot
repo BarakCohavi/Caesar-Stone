@@ -41,6 +41,7 @@ Quote to new job
     Reject The Job (Click No)
     capture page screenshot
     sleep    3s
+    wait until page does not contain element    xpath://*[text()="Save"]    60s
     Common.LogOut As Fabricator
     ${JOBStatus}    API - Validate Acceptance Fabricator API     ${access_token}    ${token_type}    ${JobId}
     should be equal as strings    ${JOBStatus}    New Job

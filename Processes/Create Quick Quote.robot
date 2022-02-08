@@ -90,7 +90,7 @@ Add Products To Quote
     click element    ${Product in first_row}
     wait until page contains    Adamina
     #click element    ${first_dropDown_option of first Product}
-    click element    xpath:(//*[@class="slds-card__body"]/slot/c-quick-quote-item-list-row[1]/div/div[2]/c-search-autocomplete-selector/div/div/div/div/div[2]/ul/c-search-autocomplete-selector-item[1]/li/div/span/span)[1]
+    click element    xpath:(//*[@class="slds-card__body"]/slot/c-quick-quote-item-list-row[1]/div/div[2]/c-search-autocomplete-selector/div/div/div/div/div[2]/ul/c-search-autocomplete-selector-item[2]/li/div/span/span)[1]
     input text    ${Quantity in first_row}    2
     capture page screenshot
 
