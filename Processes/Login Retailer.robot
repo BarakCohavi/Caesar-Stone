@@ -22,7 +22,7 @@ Login To CSpartial
     Execute javascript    document.getElementById('username').value="caesarstone.testing@gmail.com.api"
     capture page screenshot
     #input password    password   2w3e4r5t6y
-    Execute javascript    document.getElementById('username').value="caesarstone.testing@gmail.com.api"
+    Execute javascript    document.getElementById('password').value="2w3e4r5t6y"
 
     #set window size    1920    1080
     capture page screenshot
