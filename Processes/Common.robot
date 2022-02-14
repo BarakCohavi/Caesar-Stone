@@ -56,11 +56,22 @@ Login To Experience As User
     Wait Until Page Contains Element    xpath://*[text()="Log in to Experience as User"]    60s
     click element    ${Log in to Experience as User}
 
+    wait until page does not contain element    xpath://*[text()="Log in to Experience as User"]    30s
+    ${CountProducts}=    get element count    ${ARROW>Show more actions}
+    IF    ${CountProducts}==1
+        Login To Experience As User
+    END
+
+
+
+
+
 
 Navigating To "Experience As User"
     [Arguments]    ${User_Link}
     Navigate To To Giving Link Page   ${User_Link}
     Login To Experience As User
+
 
 
 LogOut As Fabricator

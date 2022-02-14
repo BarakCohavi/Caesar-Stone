@@ -44,7 +44,7 @@ Login To Experience As User1
 
 Navigating To "Experience As User"1
     Navigate To Retailer Page1
-    Login To Experience As User1
+    Login To Experience As User
 
 Clicking "Jobs" On Navbar1
     wait Until Page Contains Element   xpath://*[contains(text(),"We are excited to launch our new Dashboards!")]    60s
@@ -74,7 +74,7 @@ Choose Measurement && Installation Time
     click element    xpath://*[@title="Edit Measurement Date Preference"]/lightning-primitive-icon
     Wait Until Page Contains Element    xpath://*[text()="Job Number"]    60s
 
-    ${Measurement Date Preference}   Get Current Date    result_format=%m/%d/%Y
+    ${Measurement Date Preference}   Get Current Date    result_format=%d/%m/%Y
     Choose Fabricator
     click link    xpath://span[text()="Measurement Date Preference"]/parent::label/following-sibling::div/a[@class="datePicker-openIcon display"]
     Wait Until Page Contains Element    xpath://*[text()="Installation Date Preference"]/parent::label/following-sibling::div/input    60s
@@ -83,7 +83,7 @@ Choose Measurement && Installation Time
     click element    xpath://span[text()="Measurement Time Preference"]/parent::span/following-sibling::div/div[@class="uiPopupTrigger"]/div/div/a
     CLICK ELEMENT    xpath://*[text()="07:00 - 12:00"]
 
-    ${Installation Date Preference}   Get Current Date    result_format=%m/%d/%Y
+    ${Installation Date Preference}   Get Current Date    result_format=%d/%m/%Y
 
     click element    xpath://span[text()="Installation Time Preference"]/parent::span/following-sibling::div/div[@class="uiPopupTrigger"]/div/div/a
     Wait Until Page Contains Element    xpath://*[text()="Installation Date Preference"]/parent::label/following-sibling::div/input    60s
@@ -91,8 +91,12 @@ Choose Measurement && Installation Time
     click element    xpath://*[text()="07:00 - 12:00" and @aria-checked="false"]
 
     click button    Save
+    wait until page does not contain element    xpath://*[text()="Save"]    30s
     Maybe Invalid Dates
+
     click button    Mark Status as Complete
+
+
 Choose Fabricator
 
     wait until page contains element    xpath://*[text()="Choose A Fabricator"]/parent::label/following-sibling::div/div/div/div/input    60s

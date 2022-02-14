@@ -6,8 +6,6 @@ Library    functions.py
 *** Variables ***
 #${csConnectTest_Owner_aus1 page} =    https://caesarstone--cspartial.lightning.force.com/lightning/r/Contact/0035t000001ynRwAAI/view
 #${cs connect_aus_fab1 page} =    https://caesarstone--cspartial.lightning.force.com/lightning/r/Contact/0035t000001ynS1AAI/view
-
-
 ${room description} =    Kitchen 1
 
 ${Product in first_row} =    xpath:(//*[@class="slds-card__body"]/slot/c-quick-quote-item-list-row[1]/div/div[2]/c-search-autocomplete-selector/div/div/div/div/div/input[@placeholder="Search by name or code"])[1]

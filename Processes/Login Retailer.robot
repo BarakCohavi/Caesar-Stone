@@ -15,15 +15,19 @@ Login To CSpartial
     ${login_password} =    ReadInput  2  3
 
     Go To   ${cspartial login_page}
+
+    ${G}=    get window size
     wait until page contains    Forgot Your Password?
     input text    username   caesarstone.testing@gmail.com.api
     capture page screenshot
     input password    password   2w3e4r5t6y
+    #set window size    1920    1080
     capture page screenshot
+    ${G}=    get window size
     click element    rememberUn
     capture page screenshot
     click button    Login
-    Wait Until Page Contains Element    xpath://*[text()="Sales Caesarstone"]    100s
+    Wait Until Page Contains Element    xpath://*[text()="Sales Caesarstone"]    60s
 
 
 Initiate Web Tests

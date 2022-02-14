@@ -11,7 +11,7 @@ Suite Teardown    Common.Terminate Web Tests
 
 *** Variables ***
 ${BROWSER} =    chrome
-${BROWSER_OPTIONS} =    add_argument("--start-maximized");add_argument("--disable-notifications");add_argument("--disable-popup-blocking");add_experimental_option('excludeSwitches', ['enable-logging'])
+${BROWSER_OPTIONS} =    add_argument("--start-maximized");add_argument("--disable-notifications");add_argument("--disable-popup-blocking");add_experimental_option('excludeSwitches', ['enable-logging']);add_argument("--window-size=1360,768");add_argument("--headless")
 
 
 
@@ -26,7 +26,9 @@ Create Qoute one produst+room
     ${Total_Exc}=    substringg    ${Total_Exc}
     ${Total_Exc}=    multiple10    ${Total_Exc}
     Create Qoute.Process2 (one room & product)
-    wait until page contains element   xpath://*[text()="Job"]    120s
+    sleep    20s
+    reload page
+    wait until page contains element   xpath://*[text()="Job"]    30s
     Check Price    ${Total_Inc}    ${Total_Exc}
     Varify Created Quote (one room & product)
 

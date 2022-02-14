@@ -6,8 +6,6 @@ Resource    ../Processes/Create Quick Quote.robot
 
 
 *** Variables ***
-${BROWSER} =    chrome
-${BROWSER_OPTIONS} =    add_argument("--start-maximized");add_argument("--disable-notifications");add_argument("--disable-popup-blocking");add_experimental_option('excludeSwitches', ['enable-logging'])
 
 ${Room1}=    Kitchen 1
 ${Room2}=    Bathroom 1

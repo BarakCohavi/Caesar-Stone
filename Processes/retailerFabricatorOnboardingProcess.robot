@@ -3,11 +3,7 @@ Library    SeleniumLibrary
 Library    ../Processes/functions.py
 
 
-
-
 *** Keywords ***
-
-
  Create new Fabricator account and fill the fields
     scroll element into view    xpath://*[text()="Account Name"]/parent::label/following-sibling::div/div/div/div/input
     ${randomNumber}=    randomNumber    1000    9999
@@ -169,13 +165,13 @@ Step 2 - New Contact
 
     mouse down    xpath://*[@class="slds-button slds-button_brand cuf-publisherShareButton undefined uiButton"]
     mouse up    xpath://*[@class="slds-button slds-button_brand cuf-publisherShareButton undefined uiButton"]
-    wait until page does not contain element    xpath://*[text()="Mailing City"]/parent::label/following-sibling::input
+    wait until page does not contain element    xpath://*[text()="Mailing City"]/parent::label/following-sibling::input    30s
     wait until page contains element    xpath://*[contains(text(),"Contacttest")]    60s
 
     scroll element into view    xpath:(//*[text()="Financial Details"])
     #${VAR}=    get text    xpath:(//*[@class="custom-truncate uiOutputText"])[1]
 Save Contact
-    scroll element into view    xpath:(//*[@class="slds-truncate slds-m-right--xx-small"])[2]
+    scroll element into view    xpath:(//*[@class="slds-truncate slds-m-right--xx-small"])[1]
     sleep    2s
     mouse down    xpath:(//*[@class="slds-truncate slds-m-right--xx-small"])[1]
     mouse up      xpath:(//*[@class="slds-truncate slds-m-right--xx-small"])[1]
@@ -188,7 +184,8 @@ Search Account
     #click element    xpath://*[@title="Search"]
     sleep    10s
     Wait Until Page Contains Element    xpath://*[@title="${VAR}"]    60s
-    click element       xpath:(//search_lightning-instant-result-item)[5]
+    capture page screenshot
+    click element       xpath:(//search_lightning-instant-result-item)[4]
     capture page screenshot
 
 Scroll To Element
