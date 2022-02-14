@@ -2,7 +2,7 @@
 Documentation   Create Qoute (QC) End to end testing automation for Caesar Stone (Retailer and Fabricator)
 Library    SeleniumLibrary
 Library    ../Processes/functions.py
-Library    ../Processes/QC-Test.py
+#Library    ../Processes/QC-Test.py
 Resource    ../Processes/Login Retailer.robot
 Resource    ../Processes/Login Retailer.robot
 Resource    ../Processes/New Job.robot
