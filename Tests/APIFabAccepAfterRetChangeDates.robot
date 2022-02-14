@@ -9,7 +9,7 @@ Resource    ../Processes/New Job.robot
 Resource    ../Processes/Pending Fabricator Review & Acceptance.robot
 Resource    ../Processes/API's Keywords.robot
 
-Suite Setup    Login Retailer.Initiate Web Tests    ${BROWSER}    ${BROWSER_OPTIONS}
+#Suite Setup    Login Retailer.Initiate Web Tests    ${BROWSER}    ${BROWSER_OPTIONS}
 Suite Teardown    Common.Terminate Web Tests
 
 *** Variables ***

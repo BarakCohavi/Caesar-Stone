@@ -49,12 +49,18 @@ Process
 
 Clicking "Create Quick Quote" On Navbar
     Verify Being On "Retailer" Page
-    sleep    2s
-    click link    xpath://*[@id="6"]
+    click element    xpath://*[@id="6"]
+    capture page screenshot
+    sleep    4s
+    ${present}=     get element count    xpath://*[text()="Please fill in the consumer details"]
+    IF    ${present}==0
+        Clicking "Create Quick Quote" On Navbar
+    #ELSE
+    END
+
 
 Verify Being On "Retailer" Page
     Wait Until Page Contains Element    xpath://*[contains(text(),"Create Quick Quote")]    100s
-    sleep    2s
 
 Filling "Customer Details" Form
     Verify Being On "Customer Details" Page

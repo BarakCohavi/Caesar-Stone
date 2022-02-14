@@ -48,6 +48,8 @@ Create Qoute one produst+room
     Switch handle alert Edit
 
     View & Process Job
+    sleep    10s
+    reload page
     wait until page contains element     xpath://div[text()="Job"]/parent::h1/div/span   120s
 
     ${CURJOB}=    get text    //div[text()="Job"]/parent::h1/div/span
