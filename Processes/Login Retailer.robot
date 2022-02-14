@@ -18,9 +18,12 @@ Login To CSpartial
 
     ${G}=    get window size
     wait until page contains    Forgot Your Password?
-    input text    username   caesarstone.testing@gmail.com.api
+    #input text    username   caesarstone.testing@gmail.com.api
+    Execute javascript    document.getElementById('username').value="caesarstone.testing@gmail.com.api"
     capture page screenshot
-    input password    password   2w3e4r5t6y
+    #input password    password   2w3e4r5t6y
+    Execute javascript    document.getElementById('username').value="caesarstone.testing@gmail.com.api"
+
     #set window size    1920    1080
     capture page screenshot
     ${G}=    get window size
