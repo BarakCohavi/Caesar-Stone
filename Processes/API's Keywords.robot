@@ -174,7 +174,7 @@ API - Change Measurement && Installation Time
 AUTHENTICATION
     ${AppURL}   set variable    https://test.salesforce.com
     ${HEADERS}  set variable    application/x-www-form-urlencoded
-    ${body}   create dictionary    grant_type=password    client_id=3MVG9T992fY2Y4vvJxJ55IpDkio0xMNCUY_LWU4Mg4skz_90qwAiTjXF6h17c9xSdQfgzEwz94FqRcrbylyrf   client_secret=05BA1D9BB0922A49E4C0D83DFC8289C7BED0B5000057EF67AFCEABE8B32CDBB4    username=caesarstone.testing@gmail.com.admin    password=qualitest123dCB2UFAh6uQtowtlBVznnuDg
+    ${body}   create dictionary    grant_type=password    client_id=3MVG9T992fY2Y4vvJxJ55IpDkio0xMNCUY_LWU4Mg4skz_90qwAiTjXF6h17c9xSdQfgzEwz94FqRcrbylyrf   client_secret=05BA1D9BB0922A49E4C0D83DFC8289C7BED0B5000057EF67AFCEABE8B32CDBB4    username=caesarstone.testing@gmail.com.admin    password=qualitest1234iPf3i6Dxiy9OwypTL4jbakNdo
     create session    myssion    ${AppURL}
     ${Response}=    post on session    myssion     /services/oauth2/token    data=${body}
     should be equal as integers    ${Response.status_code}    200
