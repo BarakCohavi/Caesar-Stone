@@ -17,7 +17,7 @@ Proccess
     [Arguments]    ${CURJOB}
     Order Material
     Upload Photos    ${AddFile}
-    #Generate COC Form
+    Generate COC Form
     wait until page does not contain element    xpath://*[text()="Next"]    100s
     sleep  5s
     Wait Until Page Contains Element    xpath://div[text()="Job"]/parent::h1/div/span    60s
