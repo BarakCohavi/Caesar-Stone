@@ -66,7 +66,8 @@ Filling "Customer Details" Form
     Verify Being On "Customer Details" Page
     input text    firstName    Automated
     input text    lastName    Test
-    input text    email    caesarstone.testing@gmail.com
+    Execute javascript    document.getElementById('email').value="caesarstone.testing@gmail.com.api"
+    #input text    email    caesarstone.testing@gmail.com
     input text    phone    +1 586 789 9785
     scroll element into view    xpath://*[@name="country"]
     click element    xpath://*[@name="country"]
