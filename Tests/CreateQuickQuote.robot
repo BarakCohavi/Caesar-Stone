@@ -46,6 +46,7 @@ Create Quick Qoute one produst+room
     Clicking "Yes"
     capture page screenshot
     Uploading File and Finishing "Quote" Creation
+    capture page screenshot
     Verifying Quick Quote Was Created
 
 
