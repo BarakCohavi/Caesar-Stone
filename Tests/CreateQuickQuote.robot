@@ -44,6 +44,8 @@ Create Quick Qoute one produst+room
     ADD ONE PRODUCT Submitting "Added Products"
     capture page screenshot
     Clicking "Yes"
+
+    reload page
     capture page screenshot
     Uploading File and Finishing "Quote" Creation
     capture page screenshot
