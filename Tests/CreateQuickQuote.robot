@@ -40,8 +40,11 @@ Create Quick Qoute one produst+room
     common.Navigating To "Experience As User"    ${csConnectTest_Owner_aus1 page}
     Clicking "Create Quick Quote" On Navbar
     Filling "Customer Details" Form
+    capture page screenshot
     ADD ONE PRODUCT Submitting "Added Products"
+    capture page screenshot
     Clicking "Yes"
+    capture page screenshot
     Uploading File and Finishing "Quote" Creation
     Verifying Quick Quote Was Created
 
