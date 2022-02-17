@@ -32,16 +32,15 @@ Close The Job
 
     click element    xpath://*[@role="listbox"]/lightning-base-combobox-item[10]
 
-    sleep    0.2s
+    sleep    0.1s
     scroll element into view    xpath://*[text()="Installation Time Preference"]
     select checkbox    xpath://*[@name="Test_Job__c"]
 
     scroll element into view    xpath://*[text()="Fabricator PO Number"]
     click element    xpath://*[text()="Sync Status Fabricator Order"]/parent::lightning-combobox/div/lightning-base-combobox/div/div/button
     click element    xpath:(//*[text()="Ready to be sync"])[1]
-    sleep    0.2s
     click element    xpath://*[text()="Sync Status Retailer Order"]/parent::lightning-combobox/div/lightning-base-combobox/div/div/button
-    click element    xpath:(//*[text()="Ready to be sync"])[2]
+    click element    xpath:(//*[text()="Ready to be sync"])[1]
 
 
     wait until page contains element    xpath://*[text()="Save"]    60s
