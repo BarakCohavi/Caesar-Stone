@@ -37,10 +37,10 @@ Close The Job
     select checkbox    xpath://*[@name="Test_Job__c"]
 
     scroll element into view    xpath://*[text()="Fabricator PO Number"]
-    click element    xpath://*[text()="Sync Status Fabricator Order"]/parent::lightning-combobox/div/lightning-base-combobox/div/div/input
+    click element    xpath://*[text()="Sync Status Fabricator Order"]/parent::lightning-combobox/div/lightning-base-combobox/div/div/button
     click element    xpath:(//*[text()="--None--"])[2]
 
-    click element    xpath://*[text()="Sync Status Retailer Order"]/parent::lightning-combobox/div/lightning-base-combobox/div/div/input
+    click element    xpath://*[text()="Sync Status Retailer Order"]/parent::lightning-combobox/div/lightning-base-combobox/div/div/button
     click element    xpath:(//*[text()="--None--"])[3]
 
 
