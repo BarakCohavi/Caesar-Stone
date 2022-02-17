@@ -38,10 +38,10 @@ Close The Job
 
     scroll element into view    xpath://*[text()="Fabricator PO Number"]
     click element    xpath://*[text()="Sync Status Fabricator Order"]/parent::lightning-combobox/div/lightning-base-combobox/div/div/button
-    click element    xpath:(//*[text()="--None--"])[2]
+    click element    xpath:(//*[text()="Ready to be sync"])[1]
 
     click element    xpath://*[text()="Sync Status Retailer Order"]/parent::lightning-combobox/div/lightning-base-combobox/div/div/button
-    click element    xpath:(//*[text()="--None--"])[3]
+    click element    xpath:(//*[text()="Ready to be sync"])[2]
 
 
     wait until page contains element    xpath://*[text()="Save"]    60s
