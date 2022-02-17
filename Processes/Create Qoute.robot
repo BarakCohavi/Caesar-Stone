@@ -239,6 +239,7 @@ Switch handle alert Edit
     sleep    2s
     #close window
     ${handles}=    Get Window Handles
+    sleep    2s
     Switch Window    ${handles}[2]
 
 SELECT FRAMES Edit
