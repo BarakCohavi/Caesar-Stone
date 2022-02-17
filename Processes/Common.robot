@@ -96,9 +96,12 @@ select checkbox COCUploaded
     scroll element into view    xpath://*[text()="Do Not Send Cleaning Kit"]
     click button    xpath://*[text()="COC Uploaded"]/parent::div/following-sibling::div/button
     select checkbox    xpath://*[@name="COCUploaded__c"]
-    sleep    0.5s
+
+    sleep    0.5
+
 
     wait until page contains element    xpath://*[text()="Save"]    60s
+    capture page screenshot
     click button    Save
     wait until page contains element    xpath://*[text()="COC Uploaded"]/parent::div/following-sibling::div/button    60s
 

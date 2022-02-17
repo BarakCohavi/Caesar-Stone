@@ -28,7 +28,7 @@ Close The Job
     click button    xpath://*[text()="COC Uploaded"]/parent::div/following-sibling::div/button
 
     scroll element into view    xpath://*[text()="Status"]
-    click element    xpath://*[text()="Status"]/parent::lightning-combobox/div/lightning-base-combobox/div/div/input
+    click element    xpath://*[text()="Status"]/parent::lightning-combobox/div/lightning-base-combobox/div/div/button
 
     click element    xpath://*[@role="listbox"]/lightning-base-combobox-item[10]
 

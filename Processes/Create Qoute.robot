@@ -237,6 +237,7 @@ Click Edit Quote QC
 
 Switch handle alert Edit
     sleep    2s
+    #close window
     ${handles}=    Get Window Handles
     Switch Window    ${handles}[2]
 

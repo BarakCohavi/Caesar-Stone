@@ -24,6 +24,7 @@ Proccess
     Common.LogOut As Fabricator
     Common.Search Job By Job Name    ${CURJOB}
     select checkbox COCUploaded
+    capture page screenshot
 
 
 
@@ -104,7 +105,7 @@ Generate COC Form
     Wait Until Page Contains Element    xpath://*[@title="Sign now"]    60s
     click element    xpath://*[@title="Sign now"]
     ${url} =    get title
-
+    sleep    2s
     SeleniumLibrary.Switch Window    New COC AUS
     Select All CheckBoxes
 
