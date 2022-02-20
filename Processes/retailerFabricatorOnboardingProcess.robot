@@ -151,8 +151,8 @@ Step 2 - New Contact
     ${randomNumber}=    randomNumber    10    99
     input text    //*[@class="lastName compoundBorderBottom form-element__row input"]    Last ${randomNumber}
     ${randomNumber}=    randomNumber    1000000    9999999
-    input text    //*[@inputmode="email"]    QualitestTest+Contact${randomNumber}@gmail.com
-    #Execute javascript    document.getElementsByClassName('input')[4].value='QualitestTest+Contact${randomNumber}@gmail.com';
+    #input text    //*[@inputmode="email"]    QualitestTest+Contact${randomNumber}@gmail.com
+    Execute javascript    document.getElementsByClassName('input')[3].value='QualitestTest+Contact${randomNumber}@gmail.com';
 
 
     ${randomNumber}=    randomNumber    10000000    99999999
