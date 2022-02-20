@@ -13,7 +13,12 @@ Library    ../Processes/functions.py
     ${randomNumber}=    randomNumber    10000000    99999999
     input text    //*[@type="tel"]    05${randomNumber}
     ${randomNumber}=    randomNumber    1000000    9999999
-    input text    //*[text()="Account Email"]/parent::label/following-sibling::input    QualitestTest+${randomNumber}@gmail.com
+    #input text    //*[text()="Account Email"]/parent::label/following-sibling::input    QualitestTest+${randomNumber}@gmail.com
+    Execute javascript    document.getElementsByClassName('input')[8].value='QualitestTest+${randomNumber}@gmail.com';
+
+
+
+
     capture page screenshot
     scroll element into view    //*[text()="Legal Name"]
     ${randomNumber}=    randomNumber    1    99
@@ -49,7 +54,6 @@ Library    ../Processes/functions.py
     click element    //*[text()="Needs To Be Charged For Slabs"]/parent::span/following-sibling::div/div/div/div/a
     sleep    0.5s
     click element    (//*[text()="No"])[2]
-
     scroll element into view    xpath://*[text()="Bill To Usage ID"]
     input text    //*[text()="ORG ID"]/parent::label/following-sibling::input    201
     click element    xpath://*[@title="Save"]
@@ -61,11 +65,9 @@ Varify Creation By Check Log In
     wait until page contains element    xpath://*[@class="slds-button slds-button_icon-border-filled"]    30s
     sleep    2s
     wait until element is enabled    xpath://*[@class="slds-button slds-button_icon-border-filled"]    30s
-
     click element    xpath:(//*[@class="slds-button slds-button_icon-border-filled"])
-    #mouse down    xpath:(//*[@class="slds-button slds-button_icon-border-filled"])[2]
-    #mouse up    xpath:(//*[@class="slds-button slds-button_icon-border-filled"])[2]
     page should contain element    xpath://*[text()="Log in to Experience as User"]
+    capture page screenshot
 
 
 
@@ -77,7 +79,10 @@ Create new K&B account and fill the fields
     ${randomNumber}=    randomNumber    10000000    99999999
     input text    //*[@type="tel"]    05${randomNumber}
     ${randomNumber}=    randomNumber    1000000    9999999
-    input text    //*[text()="Account Email"]/parent::label/following-sibling::input    QualitestTest+${randomNumber}@gmail.com
+    #input text    //*[text()="Account Email"]/parent::label/following-sibling::input    QualitestTest+${randomNumber}@gmail.com
+    Execute javascript    document.getElementsByClassName('input')[5].value='QualitestTest+${randomNumber}@gmail.com';
+
+    capture page screenshot
 
     scroll element into view    //*[text()="Legal Name"]
     ${randomNumber}=    randomNumber    1    99
@@ -122,7 +127,7 @@ varify New Account created
     scroll element into view    xpath://*[text()="Account Email"]
     #wait until element is visible    xpath://*[text()="Account Name"]    60s
     scroll element into view    xpath://*[text()="Ship To Usage ID"]
-    ${Sync_status}=    get text    xpath://*[text()="Sync"]/parent::div/following-sibling::div/span/slot/slot/lightning-formatted-text
+    ${Sync_status}=    get text    xpath://*[text()="Sync"]/parent::div/following-sibling::div/span/slot/lightning-formatted-text
     #page should contain element    xpath://*[text()="Successful"]
     should not be empty    ${Sync_status}
 
@@ -141,14 +146,18 @@ Step 2 - New Contact
 
     #New Contact Info
     ${randomNumber}=    randomNumber    100    999
-    input text    //*[@class="firstName compoundBorderBottom form-element__row input"]    Contacttest ${randomNumber}
+    ${contact}    set variable    Contacttest ${randomNumber}
+    input text    //*[@class="firstName compoundBorderBottom form-element__row input"]    ${contact}
     ${randomNumber}=    randomNumber    10    99
     input text    //*[@class="lastName compoundBorderBottom form-element__row input"]    Last ${randomNumber}
     ${randomNumber}=    randomNumber    1000000    9999999
     input text    //*[@inputmode="email"]    QualitestTest+Contact${randomNumber}@gmail.com
+    #Execute javascript    document.getElementsByClassName('input')[4].value='QualitestTest+Contact${randomNumber}@gmail.com';
+
+
     ${randomNumber}=    randomNumber    10000000    99999999
     input text    (//*[@type="tel"])[2]    05${randomNumber}
-
+    capture page screenshot
     click element    //*[text()="Mailing Country"]/parent::span/following-sibling::div/div/div/div/a
     capture page screenshot
     ${randomNumber}=    randomNumber    1    99
@@ -170,22 +179,24 @@ Step 2 - New Contact
 
     scroll element into view    xpath:(//*[text()="Financial Details"])
     #${VAR}=    get text    xpath:(//*[@class="custom-truncate uiOutputText"])[1]
+    [Return]    ${contact}
+
 Save Contact
     scroll element into view    xpath:(//*[@class="slds-truncate slds-m-right--xx-small"])[1]
     sleep    2s
     mouse down    xpath:(//*[@class="slds-truncate slds-m-right--xx-small"])[1]
     mouse up      xpath:(//*[@class="slds-truncate slds-m-right--xx-small"])[1]
 
-Search Account
+Search Contact-1
     [Arguments]    ${VAR}
     click element    xpath:(//*[@data-key="search"])[1]
     sleep    1s
     input text   (//*[@type="search"])[5]    ${VAR}
     #click element    xpath://*[@title="Search"]
-    sleep    10s
+    #sleep    10s
     Wait Until Page Contains Element    xpath://*[@title="${VAR}"]    60s
     capture page screenshot
-    click element       xpath:(//search_lightning-instant-result-item)[4]
+    #click element       xpath:(//lightning-formatted-rich-text)[11]
     capture page screenshot
 
 Scroll To Element
@@ -197,7 +208,7 @@ Scroll To Element
 
 Select Edit Access to CS Connect & Primary Owner
     [Arguments]    ${VAR}
-    sleep    3s
+    wait until page contains element    xpath:(//*[text()="User Creation Failure Reason"])    30s
     ${present}=     get element count    xpath:(//*[text()="Account Manager"])
     IF    ${present}==0
         ${present}=     get element count    xpath:(//h2/a[@title="${VAR}"])
@@ -206,14 +217,14 @@ Select Edit Access to CS Connect & Primary Owner
         END
     END
     #wait until page contains element    xpath:(//*[text()="Contact Owner"])    40s
-    sleep    4s
+    sleep    2s
     scroll element into view    xpath:(//*[text()="User Creation Failure Reason"])
 
     click element    xpath://*[@title="Edit Access to CS Connect"]
-    sleep    2s
+    sleep    0.5s
 
     Scroll To Element   xpath:(//*[text()="Created By"])
-    sleep    1s
+    sleep    0.5s
     capture page screenshot
     Scroll To Element    xpath:(//*[@name="PrimaryOwner__c"])
 
@@ -232,8 +243,9 @@ Select Edit Access to CS Connect & Primary Owner
     mouse down    xpath://*[@name="SaveEdit"]
     mouse up      xpath://*[@name="SaveEdit"]
 
+    wait until page does not contain element     xpath://*[@name="SaveEdit"]    30s
+    #${VAR}=    get text    xpath:(//*[@class="custom-truncate uiOutputText"])
 
-    ${VAR}=    get text    xpath:(//*[@class="custom-truncate uiOutputText"])[2]
 Search Contact
     [Arguments]    ${VAR}
     click element    xpath:(//*[@data-key="search"])
@@ -242,7 +254,7 @@ Search Contact
     input text   (//*[@type="search"])[5]    ${VAR}
     #click element    xpath://*[@title="Search"]
     sleep    10s
-    Wait Until Page Contains Element    xpath://*[@title="${VAR}"]    60s
+    #Wait Until Page Contains Element    xpath://*[@title="${VAR}"]    60s
     #click element       xpath:(//search_lightning-instant-result-item/div)[5]
     click element       xpath:(//mark[text()="Contacttest"])[1]
 

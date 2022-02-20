@@ -23,16 +23,12 @@ Retailer Onboarding- New Account
 
 Fabricator Onboarding- New Contact
     [Tags]    New Contact
-    Step 2 - New Contact
-    ${VAR}=    get text    xpath:(//*[@class="custom-truncate uiOutputText"])[1]
+    ${contact}    Step 2 - New Contact
+    ${VAR}=    get text    xpath://*[@class="custom-truncate"]
     Save Contact
-    Search Account    ${VAR}
+    Search Contact    ${contact}
     Select Edit Access to CS Connect & Primary Owner    ${VAR}
-    #${VAR}=    get text    xpath:(//*[@class="custom-truncate uiOutputText"])[2]
-    #sleep    5s
-    #Search Contact    ${VAR}
     wait until page contains element    xpath://*[@title="Edit Access to CS Connect"]    20s
-
     reload page
     reload page
     Varify Creation By Check Log In
