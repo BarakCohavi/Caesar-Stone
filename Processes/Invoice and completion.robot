@@ -45,10 +45,10 @@ Close The Job
 
     wait until page contains element    xpath://*[text()="Save"]    60s
     click button    Save
-    sleep    2s
+    #sleep    2s
 
     ${present}=    get element count    xpath://*[text()="Save"]
-    run keyword if    ${present}>0    Click Save
+    #run keyword if    ${present}>0    Click Save
 
 Click Save
      click element    xpath://*[text()="Save"]
