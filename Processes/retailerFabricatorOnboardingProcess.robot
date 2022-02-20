@@ -14,7 +14,7 @@ Library    ../Processes/functions.py
     input text    //*[@type="tel"]    05${randomNumber}
     ${randomNumber}=    randomNumber    1000000    9999999
     input text    //*[text()="Account Email"]/parent::label/following-sibling::input    QualitestTest+${randomNumber}@gmail.com
-
+    capture page screenshot
     scroll element into view    //*[text()="Legal Name"]
     ${randomNumber}=    randomNumber    1    99
     input text    //*[text()="Legal Name"]/parent::label/following-sibling::input    LegalName${randomNumber}
