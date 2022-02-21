@@ -152,11 +152,12 @@ Step 2 - New Contact
     input text    //*[@class="lastName compoundBorderBottom form-element__row input"]    Last ${randomNumber}
     ${randomNumber}=    randomNumber    1000000    9999999
     #input text    //*[@inputmode="email"]    QualitestTest+Contact${randomNumber}@gmail.com
-    Execute javascript    document.getElementsByClassName('input')[3].value='QualitestTest+Contact${randomNumber}@gmail.com';
+    Execute javascript    document.getElementsByClassName('input')[5].value='QualitestTest+Contact${randomNumber}@gmail.com';
     capture page screenshot
 
     ${randomNumber}=    randomNumber    10000000    99999999
     input text    (//*[@type="tel"])[2]    05${randomNumber}
+    input text    (//*[@type="tel"])[1]    05${randomNumber}
     capture page screenshot
     click element    //*[text()="Mailing Country"]/parent::span/following-sibling::div/div/div/div/a
     capture page screenshot
@@ -234,12 +235,24 @@ Select Edit Access to CS Connect & Primary Owner
     click element    xpath:(//*[@title="Move selection to Chosen"])[2]
     scroll element into view    //*[text()="Mailing City"]
     capture page screenshot
-    sleep    2s
+    sleep    1s
     scroll element into view    xpath:(//*[@name="CommunityUser__c"])
     wait until page contains element    (//*[@title="Owner"])[1]    30s
     select checkbox    xpath:(//*[@name="PrimaryOwner__c"])
     click element    xpath:(//*[@title="Owner"])[1]
     click element    xpath:(//*[@title="Move selection to Chosen"])[1]
+    sleep    0.5s
+    scroll element into view    xpath://*[@name="MobilePhone"]
+
+    ${randomNumber}=    randomNumber    1000000    9999999
+    #input text    //*[@inputmode="email"]    QualitestTest+Contact${randomNumber}@gmail.com
+    #Execute javascript    document.getElementsByClassName('input')[5].value='QualitestTest+Contact${randomNumber}@gmail.com';
+    sleep    0.5s
+
+    Execute javascript    document.getElementsByTagName('Email').value='QualitestTest+Contact${randomNumber}@gmail.com';
+    capture page screenshot
+    input text    xpath://*[@name="Email"]    QualitestTest+Contact${randomNumber}@gmail.com
+
     mouse down    xpath://*[@name="SaveEdit"]
     mouse up      xpath://*[@name="SaveEdit"]
 
