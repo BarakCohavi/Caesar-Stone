@@ -249,9 +249,10 @@ Select Edit Access to CS Connect & Primary Owner
     #Execute javascript    document.getElementsByClassName('input')[5].value='QualitestTest+Contact${randomNumber}@gmail.com';
     sleep    0.5s
 
-    Execute javascript    document.getElementsByTagName('Email').value='QualitestTest+Contact${randomNumber}@gmail.com';
+    Execute javascript    document.getElementsByTagName('Email').value="QualitestTest+Contact${randomNumber}@gmail.com"
+
     capture page screenshot
-    input text    xpath://*[@name="Email"]    QualitestTest+Contact${randomNumber}@gmail.com
+    #input text    xpath://*[@name="Email"]    QualitestTest+Contact${randomNumber}@gmail.com
 
     mouse down    xpath://*[@name="SaveEdit"]
     mouse up      xpath://*[@name="SaveEdit"]
