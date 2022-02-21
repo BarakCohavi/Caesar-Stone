@@ -2,6 +2,7 @@
 Documentation    Creation Quick Quote (1 room,1 product)
 Library    SeleniumLibrary
 Resource    ../Processes/Create Quick Quote.robot
+Resource    ../Processes/retailerFabricatorOnboardingProcess.robot
 
 
 
@@ -122,8 +123,8 @@ Add New Product To The Current room
     wait until page contains    Application    30s
     click element    xpath:(//*[@class="slds-button__icon" and @data-key="add"])[1]
     sleep    1s
-    scroll element into view    xpath://*[text()="Submit"]
-
+    #scroll element into view    xpath://*[text()="Submit"]
+    Scroll To Element     xpath://*[text()="Submit"]
     ${CountProducts}=    get element count    xpath:(//*[@class="slds-card__body"])[1]/slot/c-quick-quote-item-list-row
     capture page screenshot
     click element    xpath:(//*[@class="slds-card__body"])[1]/slot/c-quick-quote-item-list-row[${CountProducts}]/div/div/lightning-combobox/div/lightning-base-combobox/div/div/button
