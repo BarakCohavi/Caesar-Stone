@@ -128,7 +128,8 @@ Add New Product To The Current room
     ${CountProducts}=    get element count    xpath:(//*[@class="slds-card__body"])[1]/slot/c-quick-quote-item-list-row
     capture page screenshot
     click element    xpath:(//*[@class="slds-card__body"])[1]/slot/c-quick-quote-item-list-row[${CountProducts}]/div/div/lightning-combobox/div/lightning-base-combobox/div/div/button
-    scroll element into view    xpath://*[text()="Submit"]
+    #scroll element into view    xpath://*[text()="Submit"]
+    Scroll To Element     xpath://*[text()="Submit"]
     click element    xpath:(//*[@class="slds-card__body"])[1]/slot/c-quick-quote-item-list-row[${CountProducts}]/div/div/lightning-combobox/div/lightning-base-combobox/div/div[2]/lightning-base-combobox-item[2]
 
     click element     xpath:(//*[@class="slds-card__body"]/slot/c-quick-quote-item-list-row[${CountProducts}]/div/div[2]/c-search-autocomplete-selector/div/div/div/div/div/input[@placeholder="Search by name or code"])[1]
