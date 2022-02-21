@@ -153,7 +153,7 @@ Step 2 - New Contact
     ${randomNumber}=    randomNumber    1000000    9999999
     #input text    //*[@inputmode="email"]    QualitestTest+Contact${randomNumber}@gmail.com
     Execute javascript    document.getElementsByClassName('input')[3].value='QualitestTest+Contact${randomNumber}@gmail.com';
-
+    capture page screenshot
 
     ${randomNumber}=    randomNumber    10000000    99999999
     input text    (//*[@type="tel"])[2]    05${randomNumber}
