@@ -231,7 +231,8 @@ Select Frames
 
 Click Edit Quote QC
     Wait Until Page Contains Element    xpath://*[text()="Edit Quote"]    60s
-    click element    xpath://*[text()="Edit Quote"]
+    mouse down    xpath://*[text()="Edit Quote"]
+    mouse up    xpath://*[text()="Edit Quote"]
     sleep    0.5s
 
 
@@ -240,7 +241,6 @@ Switch handle alert Edit
     #close window
     ${handles}=    Get Window Handles
     sleep    2s
-    get window titles    ${handles}[2]
     Switch Window    ${handles}[2]
 
 SELECT FRAMES Edit
