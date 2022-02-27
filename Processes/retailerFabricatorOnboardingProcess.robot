@@ -151,7 +151,7 @@ Step 2 - New Contact
     ${randomNumber}=    randomNumber    10    99
     input text    //*[@class="lastName compoundBorderBottom form-element__row input"]    Last ${randomNumber}
     ${randomNumber}=    randomNumber    1000000    9999999
-    #input text    //*[@inputmode="email"]    QualitestTest+Contact${randomNumber}@gmail.com
+    #input text    (//*[@class="input"])[5]    QualitestTest+Contact${randomNumber}@gmail.com
     Execute javascript    document.getElementsByClassName('input')[5].value='QualitestTest+Contact${randomNumber}@gmail.com';
     capture page screenshot
 
@@ -172,6 +172,10 @@ Step 2 - New Contact
     ${randomNumber}=    randomNumber    100    999
     input text    //*[text()="Mailing City"]/parent::label/following-sibling::input    City${randomNumber}
 
+
+    scroll element into view     //*[text()="Mailing Country"]/parent::span/following-sibling::div/div/div/div/a
+    Execute javascript    document.getElementsByClassName('input')[5].value='QualitestTest+Contact${randomNumber}@gmail.com';
+    capture page screenshot
 
     mouse down    xpath://*[@class="slds-button slds-button_brand cuf-publisherShareButton undefined uiButton"]
     mouse up    xpath://*[@class="slds-button slds-button_brand cuf-publisherShareButton undefined uiButton"]
@@ -249,11 +253,10 @@ Select Edit Access to CS Connect & Primary Owner
     #Execute javascript    document.getElementsByClassName('input')[5].value='QualitestTest+Contact${randomNumber}@gmail.com';
     sleep    0.5s
 
-    Execute javascript    document.getElementsByTagName('Email').value="QualitestTest+Contact${randomNumber}@gmail.com"
+    Execute javascript    document.getElementsByTagName('Email').value='QualitestTest+Contact${randomNumber}@gmail.com';
 
+    input text    xpath://*[@name="Email"]    QualitestTest+Contact${randomNumber}@gmail.com
     capture page screenshot
-    #input text    xpath://*[@name="Email"]    QualitestTest+Contact${randomNumber}@gmail.com
-
     mouse down    xpath://*[@name="SaveEdit"]
     mouse up      xpath://*[@name="SaveEdit"]
 

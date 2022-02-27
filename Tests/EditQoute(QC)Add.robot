@@ -8,7 +8,7 @@ Suite Teardown    Common.Terminate Web Tests
 
 *** Variables ***
 ${BROWSER} =    chrome
-${BROWSER_OPTIONS} =    add_argument("--start-maximized");add_argument("--disable-notifications");add_argument("--disable-popup-blocking");add_experimental_option('excludeSwitches', ['enable-logging']);add_argument("--window-size=1360,768");add_argument("--disable-gpu")
+${BROWSER_OPTIONS} =    add_argument("--start-maximized");add_argument("--disable-notifications");add_argument("--disable-popup-blocking");add_experimental_option('excludeSwitches', ['enable-logging']);add_argument("--window-size=1360,768");add_argument("--headless");add_argument("--disable-gpu")
 
 
 
@@ -25,17 +25,10 @@ Create Qoute one produst+room
 
     Click Edit Quote QC
     capture page screenshot
-    LOG TO CONSOLE    HIIIIIIII
-    #Switch handle alert Edit
-    #close window
-    sleep    10s
-    Switch Window  title=Quote
-    LOG TO CONSOLE    HI
-    capture page screenshot
+    Switch handle alert Edit
     SELECT FRAMES Edit
     CLICK ADD ROOM Edit
     Choose Room
-    LOG TO CONSOLE    HI45
     Add SPLASHBACK
     Add Edge2
     Add CUTOUTS & SPECIALY CUTS & ADDITIONAL TRAVEL Edit
@@ -45,13 +38,13 @@ Create Qoute one produst+room
     ${Total_Inc}=    substringg    ${Total_Inc}   #to cut the dolar
     ${Total_Exc}=    substringg    ${Total_Exc}
     ${Total_Exc}=    multiple10    ${Total_Exc}
-    LOG TO CONSOLE    HI4589999
+
     click element    xpath://*[text()="Checkout Now"]
     wait until page contains element    xpath://*[text()="Save Quote"]     60s
     sleep    2s
     click element    xpath://*[text()="Save Quote"]
     capture page screenshot
-    LOG TO CONSOLE    HI458787878787
+
     Switch handle alert Edit
     log to console    hi3
     View & Process Job
