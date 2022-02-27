@@ -260,7 +260,7 @@ Select Edit Access to CS Connect & Primary Owner
     press key      xpath://*[@name="Email"]    c
     press key      xpath://*[@name="Email"]    o
     press key      xpath://*[@name="Email"]    m
-    capture page screenshot
+    #capture page screenshot
     #click element    xpath://*[@name="Title"]
     #click element    xpath://*[@name="Email"]
     #press keys    xpath://*[@name="Email"]     com
