@@ -244,6 +244,7 @@ Switch handle alert Edit
     sleep    2s
     Switch Window    NEW
     log to console    switched
+    capture page screenshot
 
 SELECT FRAMES Edit
     wait until page contains element    xpath://*[text()="Home"]    60s
