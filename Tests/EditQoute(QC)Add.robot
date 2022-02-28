@@ -44,14 +44,16 @@ Create Qoute one produst+room
     click element    xpath://*[text()="Checkout Now"]
     wait until page contains element    xpath://*[text()="Save Quote"]     60s
     sleep    2s
-    #click element    xpath://*[text()="Save Quote"]
-    #wait until page does not contain element    xpath://*[text()="Save Quote"]    50s
-    #capture page screenshot
-    Save Qoute
-    log to console    Saved swictch again plz
+     ${url} =    get title
+    click element    xpath://*[text()="Save Quote"]
+    wait until page does not contain element    xpath://*[text()="Save Quote"]    50s
+    capture page screenshot
+    log to console    swictch again plz
+    SeleniumLibrary.switch window    ${url}
     #Switch handle alert Edit
     log to console    hi3
     #capture page screenshot
+    #sleep    10s
 
     View & Process Job
     sleep    10s
