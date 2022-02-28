@@ -238,10 +238,12 @@ Click Edit Quote QC
 
 Switch handle alert Edit
     sleep    2s
+    log to console    Hello
     #close window
     ${handles}=    Get Window Handles
     sleep    2s
-    Switch Window    ${handles}[2]
+    Switch Window    NEW
+    log to console    switched
 
 SELECT FRAMES Edit
     wait until page contains element    xpath://*[text()="Home"]    60s

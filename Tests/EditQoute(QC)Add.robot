@@ -26,7 +26,9 @@ Create Qoute one produst+room
     Click Edit Quote QC
     capture page screenshot
     Switch handle alert Edit
+    capture page screenshot
     SELECT FRAMES Edit
+    log to console    FRAMES
     CLICK ADD ROOM Edit
     Choose Room
     Add SPLASHBACK
@@ -38,20 +40,21 @@ Create Qoute one produst+room
     ${Total_Inc}=    substringg    ${Total_Inc}   #to cut the dolar
     ${Total_Exc}=    substringg    ${Total_Exc}
     ${Total_Exc}=    multiple10    ${Total_Exc}
-
+    log to console    hi again
     click element    xpath://*[text()="Checkout Now"]
     wait until page contains element    xpath://*[text()="Save Quote"]     60s
     sleep    2s
     click element    xpath://*[text()="Save Quote"]
+    wait until page does not contain element    xpath://*[text()="Save Quote"]    50s
     capture page screenshot
-
+    log to console    swictch again plz
     Switch handle alert Edit
     log to console    hi3
     View & Process Job
     sleep    10s
     reload page
     wait until page contains element     xpath://div[text()="Job"]/parent::h1/div/span   120s
-
+    log to console    yallah do it
     ${CURJOB}=    get text    //div[text()="Job"]/parent::h1/div/span
     #sleep    20s
     #Click Search CaesarStone Page1    ${CURJOB}
