@@ -106,7 +106,8 @@ Generate COC Form
     click element    xpath://*[@title="Sign now"]
     ${url} =    get title
     sleep    2s
-    SeleniumLibrary.Switch Window    New COC AUS
+    #SeleniumLibrary.Switch Window    New COC AUS
+    switch window    NEW
     Select All CheckBoxes
 
     SeleniumLibrary.switch window    ${url}
