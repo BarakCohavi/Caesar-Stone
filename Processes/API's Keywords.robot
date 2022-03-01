@@ -157,7 +157,7 @@ API - Change Measurement && Installation Time
     Wait Until Page Contains Element    xpath://*[text()="Installation Date Preference"]/parent::label/following-sibling::div/input    60s
     input text    xpath://*[text()="Installation Date Preference"]/parent::label/following-sibling::div/input    ${Installation Date Preference}
     click element    xpath://*[text()="12:00 - 16:00" and @aria-checked="false"]
-
+    capture page screenshot
     click button    Save
 
     Maybe Invalid Dates
@@ -223,7 +223,7 @@ API - Choose Measurement && Installation Time
     Wait Until Page Contains Element    xpath://*[text()="Installation Date Preference"]/parent::label/following-sibling::div/input    60s
     input text    xpath://*[text()="Installation Date Preference"]/parent::label/following-sibling::div/input    ${Installation Date Preference}
     click element    xpath://*[text()="07:00 - 12:00" and @aria-checked="false"]
-
+    capture page screenshot
     click button    Save
     click button    Mark Status as Complete
     sleep    4s

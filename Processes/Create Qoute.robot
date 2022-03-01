@@ -238,12 +238,12 @@ Click Edit Quote QC
 
 Switch handle alert Edit
     sleep    2s
-    log to console    Hello
+    #log to console    Hello
     #close window
     ${handles}=    Get Window Handles
     sleep    2s
     Switch Window    NEW
-    log to console    switched
+    #log to console    switched
     capture page screenshot
 
 SELECT FRAMES Edit
