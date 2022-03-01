@@ -51,9 +51,9 @@ API - Validate Acceptance Fabricator API
     ${jsonres}=    set variable    ${Response.json()}
     ${JOBName}=    get from dictionary     ${jsonres}    records
     ${FABAnsw}=    set variable     ${jsonres['records'][0]['Status__c']}
-    log to console     4
-    log to console     ${jsonres}
-    log to console     ${FABAnsw}
+    #log to console     4
+    #log to console     ${jsonres}
+    #log to console     ${FABAnsw}
     [Return]     ${FABAnsw}
 
 
@@ -181,9 +181,9 @@ AUTHENTICATION
     ${jsonres}=    set variable    ${Response.json()}
     ${access_token}=    get from dictionary     ${jsonres}    access_token
     ${token_type}=    get from dictionary     ${jsonres}    token_type
-    log to console     ${jsonres}
-    log to console     11111111111
-    log to console     ${access_token}
+    #log to console     ${jsonres}
+    #log to console     11111111111
+    #log to console     ${access_token}
     [Return]    ${access_token}    ${token_type}
 
 
@@ -254,10 +254,10 @@ CREATE NEW JOB
 
     ${Status}=    get from dictionary     ${jsonres}    success
     ${JobId}=    get from dictionary     ${jsonres}    id
-    log to console     2222222222
-    log to console     ${jsonres}
-    log to console     ${Status}
-    log to console     ${JobId}
+    #log to console     2222222222
+    #log to console     ${jsonres}
+    #log to console     ${Status}
+    #log to console     ${JobId}
     [Return]    ${JobId}
 
 
@@ -306,9 +306,9 @@ GET JOB NAME “NEW JOB”
     ${jsonres}=    set variable    ${Response.json()}
     ${JOBName}=    get from dictionary     ${jsonres}    records
     ${JOBName}=    set variable     ${jsonres['records'][0]['Name']}
-    log to console     4
-    log to console     ${jsonres}
-    log to console     ${JOBName}
+    #log to console     4
+    #log to console     ${jsonres}
+    #log to console     ${JOBName}
     [Return]     ${JOBName}
 
 

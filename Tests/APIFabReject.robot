@@ -9,7 +9,6 @@ Resource    ../Processes/New Job.robot
 Resource    ../Processes/Pending Fabricator Review & Acceptance.robot
 Resource    ../Processes/API's Keywords.robot
 
-#Suite Setup    Login Retailer.Initiate Web Tests    ${BROWSER}    ${BROWSER_OPTIONS}
 Suite Teardown    Common.Terminate Web Tests
 
 *** Variables ***
@@ -21,7 +20,6 @@ ${BROWSER_OPTIONS} =    add_argument("--start-maximized");add_argument("--disabl
 *** Test Cases ***
 Quote to new job
     [Documentation]    Retailer set fabricator & measure & install dates -fabricator rejects the job
-
     ${access_token}    ${token_type}    AUTHENTICATION
     ${JobId}    CREATE NEW JOB     ${access_token}    ${token_type}
     Validate CREATE NEW JOB    ${JobId}
