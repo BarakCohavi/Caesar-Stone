@@ -26,7 +26,7 @@ Create Qoute one produst+room
     ${Total_Exc}=    substringg    ${Total_Exc}
     ${Total_Exc}=    multiple10    ${Total_Exc}
     Create Qoute.Process2 (one room & product)
-    sleep    10s
+    sleep    20s
     reload page
     wait until page contains element   xpath://*[text()="Job"]    30s
     Check Price    ${Total_Inc}    ${Total_Exc}

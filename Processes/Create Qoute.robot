@@ -29,7 +29,7 @@ Proccess
 
     Save Qoute
     View & Process Job
-    sleep    10s
+    sleep    20s
     reload page
     wait until page contains element   xpath://*[text()="Job"]    120s
     Check Price    ${Total_Inc}    ${Total_Exc}

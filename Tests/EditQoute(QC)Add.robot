@@ -28,7 +28,7 @@ Create Qoute one produst+room
     Switch handle alert Edit
     capture page screenshot
     SELECT FRAMES Edit
-    log to console    FRAMES
+    #log to console    FRAMES
     CLICK ADD ROOM Edit
     Choose Room
     Add SPLASHBACK
@@ -40,7 +40,7 @@ Create Qoute one produst+room
     ${Total_Inc}=    substringg    ${Total_Inc}   #to cut the dolar
     ${Total_Exc}=    substringg    ${Total_Exc}
     ${Total_Exc}=    multiple10    ${Total_Exc}
-    log to console    hi again
+    #log to console    hi again
     click element    xpath://*[text()="Checkout Now"]
     wait until page contains element    xpath://*[text()="Save Quote"]     60s
     sleep    2s
@@ -48,27 +48,27 @@ Create Qoute one produst+room
     click element    xpath://*[text()="Save Quote"]
 
     capture page screenshot
-    log to console    swictch again plz
+    #log to console    swictch again plz
     QC CREATED
     capture page screenshot
     #SeleniumLibrary.switch window    ${url}
     wait until page does not contain element    xpath://*[text()="Save Quote"]    100s
     #Switch handle alert Edit
-    log to console    hi3
+    #log to console    hi3
     #capture page screenshot
     #sleep    10s
 
     #View & Process Job
-    sleep    10s
+    sleep    20s
     reload page
     wait until page contains element     xpath://div[text()="Job"]/parent::h1/div/span   120s
-    log to console    yallah do it
+    #log to console    yallah do it
     ${CURJOB}=    get text    //div[text()="Job"]/parent::h1/div/span
     #sleep    20s
     #Click Search CaesarStone Page1    ${CURJOB}
     reload page
     wait until page contains element    xpath://div[text()="Job"]/parent::h1/div/span    60s
-    Check Price    ${Total_Inc}    ${Total_Exc}    #check if price same before saving and after
+    Check Price    ${Total_Exc}    ${Total_Inc}    #check if price same before saving and after
     Compare New And Old Total Price    ${Old_Total_Exc}    ${Total_Exc} #check if the price changed
 
 
