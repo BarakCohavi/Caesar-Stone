@@ -7,7 +7,7 @@ Library    ../Processes/functions.py
 
 
 *** Keywords ***
-Check Price-1
+Check Price
     [Arguments]        ${Total_Inc}   ${Total_Exc}
     wait until page contains element      xpath://*[text()="Job Details"]    50s
 
@@ -43,7 +43,7 @@ Check Price-1
     #should be true    ${Total_Inc} == ${Cur_Total_Inc}
     should be true    ${Total_Exc} == ${Cur_Total_Exc}
 
-Check Price
+Check Price-1
     [Arguments]        ${Total_Inc}   ${Total_Exc}
     wait until page contains element      xpath://*[text()="Job Details"]    50s
 
