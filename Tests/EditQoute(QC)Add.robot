@@ -68,7 +68,7 @@ Create Qoute one produst+room
     #Click Search CaesarStone Page1    ${CURJOB}
     reload page
     wait until page contains element    xpath://div[text()="Job"]/parent::h1/div/span    60s
-    Check Price    ${Total_Exc}    ${Total_Inc}    #check if price same before saving and after
+    Check Price-1    ${Total_Exc}    ${Total_Inc}    #check if price same before saving and after
     Compare New And Old Total Price    ${Old_Total_Exc}    ${Total_Exc} #check if the price changed
 
 
