@@ -15,6 +15,7 @@ ${BROWSER_OPTIONS} =    add_argument("--start-maximized");add_argument("--disabl
 
 *** Test Cases ***
 Create Qoute -> Edit -> Remove (QC)
+    set selenium speed    0.5s
     Create Qoute.Proccess
     Click Edit Quote QC
     capture page screenshot
