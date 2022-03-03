@@ -112,5 +112,6 @@ Choose Fabricator
     ${fabricator}    ReadInput  2  8
     input text    //*[text()="Choose A Fabricator"]/parent::label/following-sibling::div/div/div/div/input    ${fabricator}
     Wait Until Page Contains Element    xpath://*[@title="${fabricator}"]    60s
+    sleep    1s
     click element    xpath://*[@title="${fabricator}"]
     sleep    0.5s

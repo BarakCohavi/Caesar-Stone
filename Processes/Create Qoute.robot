@@ -61,6 +61,7 @@ Process2 (one room & product)
     select frame    //iframe[@title="QuoteCountertops"]
     wait until page contains element    xpath://*[text()="View & Process Job"]      60s
     click element    xpath://*[text()="View & Process Job"]
+    wait until page does not contain element    xpath://*[text()="View & Process Job"]    120
     capture page screenshot
 
 View & Process Job
