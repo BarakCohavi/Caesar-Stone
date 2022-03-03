@@ -94,7 +94,7 @@ Choose Measurement && Installation Time
     wait until page does not contain element    xpath://*[text()="Save"]    30s
     Maybe Invalid Dates
 
-    click button    Mark Status as Complete
+    #click button    Mark Status as Complete
 
 
 Choose Fabricator

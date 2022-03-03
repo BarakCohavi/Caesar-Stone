@@ -113,7 +113,7 @@ Click Search CaesarStone Page
     Wait Until Page Contains Element    xpath://*[@class="slds-button slds-no-space slds-m-bottom_xx-small"]    60s
     wait until element is enabled    xpath://*[@class="slds-button slds-no-space slds-m-bottom_xx-small"]    60s
     wait until element is visible    xpath://*[@class="slds-button slds-no-space slds-m-bottom_xx-small"]    60s
-    sleep    3s
+    sleep    5.5s
     wait until element is enabled    xpath:(//*[@data-key="search"]/parent::lightning-primitive-icon)[1]    60s
     mouse down    xpath:(//*[@data-key="search"]/parent::lightning-primitive-icon)[1]
     mouse up    xpath:(//*[@data-key="search"]/parent::lightning-primitive-icon)[1]
