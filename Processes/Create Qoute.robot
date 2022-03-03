@@ -29,7 +29,7 @@ Proccess
 
     Save Qoute
     View & Process Job
-    sleep    20s
+    sleep    35s
     reload page
     wait until page contains element   xpath://*[text()="Job"]    120s
     Check Price    ${Total_Inc}    ${Total_Exc}
@@ -62,7 +62,7 @@ Process2 (one room & product)
     wait until page contains element    xpath://*[text()="View & Process Job"]      60s
     click element    xpath://*[text()="View & Process Job"]
     #wait until page does not contain element    xpath://*[text()="View & Process Job"]    120
-    wait until page contains element     xpath://*[text()="Job"]    120s
+
     capture page screenshot
 
 View & Process Job
