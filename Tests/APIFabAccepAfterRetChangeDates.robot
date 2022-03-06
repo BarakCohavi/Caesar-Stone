@@ -59,6 +59,13 @@ Quote to new job
     wait until page contains element    xpath://*[@class="headerButtonBody"]/lightning-icon   60s
     mouse down    xpath://*[@class="headerButtonBody"]/lightning-icon
     mouse up    xpath://*[@class="headerButtonBody"]/lightning-icon
+    sleep    2s
+    ${CountProducts}=    get element count    xpath://*[contains(text(),"${JobName}")]
+    IF    ${CountProducts}==0
+        mouse down    xpath://*[@class="headerButtonBody"]/lightning-icon
+        mouse up    xpath://*[@class="headerButtonBody"]/lightning-icon
+    END
+
     wait until page contains element    xpath://*[contains(text(),"${JobName}")]    30s
     click element    xpath://*[contains(text(),"${JobName}")]
     capture page screenshot
