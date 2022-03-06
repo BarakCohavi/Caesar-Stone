@@ -57,7 +57,8 @@ Quote to new job
     API - log in as a fabricator
     #check notification
     wait until page contains element    xpath://*[@class="headerButtonBody"]/lightning-icon   60s
-    click element    xpath://*[@class="headerButtonBody"]/lightning-icon
+    mouse down    xpath://*[@class="headerButtonBody"]/lightning-icon
+    mouse up    xpath://*[@class="headerButtonBody"]/lightning-icon
     wait until page contains element    xpath://*[contains(text(),"${JobName}")]    30s
     click element    xpath://*[contains(text(),"${JobName}")]
     capture page screenshot
