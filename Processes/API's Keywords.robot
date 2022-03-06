@@ -161,10 +161,10 @@ API - Change Measurement && Installation Time
     click button    Save
 
     Maybe Invalid Dates
-     ${CountProducts}=    get element count    xpath://*[text()="Mark as Current Status"]
-    IF    ${CountProducts}>=1
-        click button    Mark as Current Status
-    END
+    #${CountProducts}=    get element count    xpath://*[text()="Mark as Current Status"]
+    #IF    ${CountProducts}>=1
+        #click button    Mark as Current Status
+    #END
 
 
 

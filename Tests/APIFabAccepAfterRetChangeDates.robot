@@ -55,11 +55,30 @@ Quote to new job
     capture page screenshot
     common.Retailer Log Out-API
     API - log in as a fabricator
-    Click Search CaesarStone Page    ${JobName}
-    Accept The Job (Click Yes)
+    #check notification
+    wait until page contains element    xpath://*[@class="headerButtonBody"]/lightning-icon   60s
+    click element    xpath://*[@class="headerButtonBody"]/lightning-icon
+    wait until page contains element    xpath://*[contains(text(),"${JobName}")]    30s
+    click element    xpath://*[contains(text(),"${JobName}")]
+    capture page screenshot
+    wait until page contains element    xpath://*[text()="Approve"]     60s
+    click element    xpath://*[text()="Approve"]
+    capture page screenshot
+    wait until page contains element    xpath://*[text()="Approve Job"]      60s
+    click element    xpath:(//*[text()="Approve"])[2]
+    capture page screenshot
+    wait until page contains element    xpath://*[text()="Approved"]      60s
+
+    #Click Search CaesarStone Page    ${JobName}
+    #Accept The Job (Click Yes)
     capture page screenshot
     sleep    3s
     Common.LogOut As Fabricator
     ${JOBStatus}    API - Validate Acceptance Fabricator API     ${access_token}    ${token_type}    ${JobId}
     should be equal as strings    ${JOBStatus}    Job Pending Measurement
+
+
+
+
+
 
