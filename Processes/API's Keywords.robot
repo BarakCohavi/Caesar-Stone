@@ -127,7 +127,7 @@ API - Change Measurement && Installation Time
     click element    xpath://*[@title="Edit Measurement Date Preference"]/lightning-primitive-icon
     Wait Until Page Contains Element    xpath://*[text()="Job Number"]    60s
 
-    ${Measurement Date Preference}   Get Current Date    result_format=%m/%d/%Y
+    ${Measurement Date Preference}   Get Current Date    result_format=%d/%m/%Y
     #${Measurement Date Preference}   add time to date    ${Measurement Date Preference}    10 days    result_format=%d/%m/%Y
     #API - Choose Fabricator
     wait until page contains element    xpath://*[text()="Choose A Fabricator"]/parent::label/following-sibling::div/div/div/div/input    60s
@@ -150,7 +150,7 @@ API - Change Measurement && Installation Time
     Wait Until Element Is Visible     xpath://span[text()="Measurement Time Preference"]/parent::span/following-sibling::div/div[@class="uiPopupTrigger"]/div/div/a
     click element    xpath://span[text()="Measurement Time Preference"]/parent::span/following-sibling::div/div[@class="uiPopupTrigger"]/div/div/a
     CLICK ELEMENT    xpath://*[text()="12:00 - 16:00"]
-    ${Installation Date Preference}   Get Current Date    result_format=%m/%d/%Y
+    ${Installation Date Preference}   Get Current Date    result_format=%d/%m/%Y
     #${Installation Date Preference}   add time to date    ${Installation Date Preference}    10 days    result_format=%d/%m/%Y
 
     click element    xpath://span[text()="Installation Time Preference"]/parent::span/following-sibling::div/div[@class="uiPopupTrigger"]/div/div/a
