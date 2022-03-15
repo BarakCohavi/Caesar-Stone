@@ -150,12 +150,12 @@ API - Change Measurement && Installation Time
     Wait Until Element Is Visible     xpath://span[text()="Measurement Time Preference"]/parent::span/following-sibling::div/div[@class="uiPopupTrigger"]/div/div/a
     click element    xpath://span[text()="Measurement Time Preference"]/parent::span/following-sibling::div/div[@class="uiPopupTrigger"]/div/div/a
     CLICK ELEMENT    xpath://*[text()="12:00 - 16:00"]
-    ${Installation Date Preference}   Get Current Date    result_format=%d/%m/%Y
-    #${Installation Date Preference}   add time to date    ${Installation Date Preference}    10 days    result_format=%d/%m/%Y
+    ${Installation Date Preference}   Get Current Date
+    ${Installation}   add time to date    ${Installation Date Preference}    10 days    result_format=%d/%m/%Y
 
     click element    xpath://span[text()="Installation Time Preference"]/parent::span/following-sibling::div/div[@class="uiPopupTrigger"]/div/div/a
     Wait Until Page Contains Element    xpath://*[text()="Installation Date Preference"]/parent::label/following-sibling::div/input    60s
-    input text    xpath://*[text()="Installation Date Preference"]/parent::label/following-sibling::div/input    ${Installation Date Preference}
+    input text    xpath://*[text()="Installation Date Preference"]/parent::label/following-sibling::div/input    ${Installation}
     click element    xpath://*[text()="12:00 - 16:00" and @aria-checked="false"]
     capture page screenshot
     click button    Save

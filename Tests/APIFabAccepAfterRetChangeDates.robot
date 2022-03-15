@@ -67,7 +67,7 @@ Quote to new job
     #IF    ${CountProducts}==0
         #click element     xpath://span/span[@class="counterLabel"]
         #mouse up    xpath://*[@class="headerButtonBody"]/lightning-icon
-    #ENDv
+    #END
 
     wait until page contains element    xpath://*[contains(text(),"${JobName}")]    30s
     click element    xpath://*[contains(text(),"${JobName}")]

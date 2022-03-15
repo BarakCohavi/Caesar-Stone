@@ -149,6 +149,7 @@ Click Search CaesarStone Page
     wait until element is visible    xpath://*[@title="${CURJOB}"]    60s
     ${CountProducts}=    get element count    xpath://a[text()="${CURJOB}"]
     capture page screenshot
+    sleep    2s
     IF    ${CountProducts}==1
            Wait Until Page Contains Element    xpath://*[@title="${CURJOB}"]    60s
              wait until element is visible    xpath://*[@title="${CURJOB}"]    60s
